@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modern Image → PDF Converter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="icon" type="image/png" href="pdf.png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <h1>Image → PDF Converter</h1>
+    <button id="theme-toggle" class="icon-btn">🌙</button>
+  </header>
+
+  <main class="container">
+
+    <!-- Upload Area -->
+    <label id="drop-zone" class="upload-card">
+      <input id="file-input" type="file" accept="image/*" multiple />
+      <div class="upload-inner">
+        <div class="upload-icon">📂</div>
+        <p class="upload-title">Drag & Drop Images or Click to Browse</p>
+        <p class="upload-sub">Supports JPG • PNG • WEBP • JPEG</p>
+      </div>
+    </label>
+
+    <!-- Settings -->
+    <section class="panel">
+
+      <div class="row">
+        <div class="field">
+          <label>Page Size</label>
+          <select id="page-size">
+            <option value="a4">A4</option>
+            <option value="letter">Letter</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Orientation</label>
+          <select id="orientation">
+            <option value="p">Portrait</option>
+            <option value="l">Landscape</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="clear-all" class="btn danger">Remove All</button>
+        <button id="convert-btn" class="btn primary">Convert to PDF</button>
+        <a id="download-btn" class="btn success hidden">Download PDF</a>
+      </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section>
+      <h2 class="section-title">Preview & Reorder</h2>
+      <ul id="preview-grid" class="preview-grid"></ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    © 2025 Parbhej Mahruf. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
